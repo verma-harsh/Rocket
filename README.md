@@ -1,8 +1,8 @@
 A small game based on javascript with react.
 
-#Build Project
+# Build Project
     - npm run build
 
-#Start Application
+# Start Application
     - npm run start
     
