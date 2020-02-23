@@ -11,9 +11,36 @@ export class Rocket {
   }
 
   captureKeyPress() {
-    document.addEventListener("keypress", () => {
-      this.x = 2;
-      this.y = 2;
+    document.addEventListener("keydown", (ev) => {
+        const key = ev.key;
+        switch(key){
+            case 'ArrowUp':{
+               this.y = this.y - 5;
+               break;
+            }
+            case 'ArrowDown':{
+                this.y = this.y + 5;
+                break;
+            }
+            case 'ArrowLeft':{
+                this.x = this.x - 5;
+                break;
+            }
+            case 'ArrowRight':{
+                this.x = this.x + 5;
+                break;
+            }
+        
+        }
+        
+        if(this.x < 0){
+            this.x = document.body.clientWidth;
+        }
+
+        if(this.y < 0){
+            this.y = window.innerHeight;
+        }
+
     });
   }
 
