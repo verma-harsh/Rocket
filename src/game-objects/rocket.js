@@ -1,8 +1,12 @@
 import React from "react";
+import rocket from "../assets/rocket.jxr";
+const SPEED = 2;
+const ACCELERATION = .5;
 export class Rocket {
   x;
   y;
-  speed = 5; 
+  speed = SPEED; 
+  prevKey;
 
   constructor() {
     this.x = window.innerWidth / 2;
@@ -18,6 +22,14 @@ export class Rocket {
 
   governMovement(ev){
     const key = ev.key;
+    if(this.prevKey === key){
+      // Add acceleration
+      this.speed = this.speed + ACCELERATION;
+    }else{
+      //reset speed
+      this.speed = SPEED;
+    }
+    this.prevKey = key;
     switch(key){
         case 'ArrowUp':{
            this.y = this.y - this.speed;
@@ -34,8 +46,7 @@ export class Rocket {
         case 'ArrowRight':{
             this.x = this.x + this.speed;
             break;
-        }
-    
+        } 
     }
     
     if(this.x < 0){
@@ -64,7 +75,7 @@ export class Rocket {
           left: this.x
         }}
       >
-        Rocket
+        <img src={rocket} alt='rocket'/>
       </div>
     );
   }
