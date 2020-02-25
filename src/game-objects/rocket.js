@@ -1,5 +1,6 @@
 import React from "react";
-import rocket from "../assets/rocket.jxr";
+import rocket from "../assets/rocket.png";
+import '../game-objects/rocket.css';
 const SPEED = 2;
 const ACCELERATION = .5;
 export class Rocket {
@@ -47,6 +48,10 @@ export class Rocket {
             this.x = this.x + this.speed;
             break;
         } 
+        default :
+          {
+            console.log('Dont move the rocket!')
+          }
     }
     
     if(this.x < 0){
@@ -75,7 +80,7 @@ export class Rocket {
           left: this.x
         }}
       >
-        <img src={rocket} alt='rocket'/>
+      <img className="rocket-size" src={rocket} alt='rocket'/>
       </div>
     );
   }
