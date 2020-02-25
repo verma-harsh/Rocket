@@ -1,5 +1,7 @@
 import React from 'react';
-import { Rocket } from "../../game-objects/rocket";
+import { Rocket } from "../../game-objects/rocket/rocket";
+import { Star } from "../../game-objects/star/Star";
+import "../app/app.css";
 
 class RocketApp extends React.Component {
     rocket = new Rocket();
@@ -23,8 +25,13 @@ class RocketApp extends React.Component {
     render(){
 
         return (
-            <div>
-                {this.state.rocketStruct}
+            <div className="full-height">
+                <div className="full-height space-background">
+                    <Star/>
+                </div>
+               <div>
+               {this.state.rocketStruct}
+               </div>
              </div>
         )
     }

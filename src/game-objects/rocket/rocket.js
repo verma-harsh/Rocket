@@ -1,6 +1,6 @@
 import React from "react";
-import rocket from "../assets/rocket.png";
-import '../game-objects/rocket.css';
+import rocket from "../../assets/rocket.png";
+import '../rocket/rocket.css';
 const SPEED = 2;
 const ACCELERATION = .5;
 export class Rocket {

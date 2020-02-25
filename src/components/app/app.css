@@ -1,0 +1,7 @@
+.space-background{
+    width: 100%;
+    background-image: linear-gradient(to bottom, #0c1e37, #071e33, #051d2e, #061c29, #081b24);
+}
+.full-height{
+    height: 100%;
+}
