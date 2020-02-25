@@ -7,6 +7,7 @@ Currently I am in middle of developing it. Soon I will be making a github page f
 * Make a start menu
 * A settings option would seems nice
 * Add physics 
+* Add enemy ships/rocks/"something enemyish"
 # Build Project
 * npm run build
 
