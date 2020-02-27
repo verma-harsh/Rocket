@@ -4,6 +4,8 @@ Currently I am in middle of developing it. Soon I will be making a github page f
 # TODO
 [x] ~~Make the rocket move~~
 [x] ~~Make some awesome background~~
+[x] ~~Add a score counter~~
+[x] ~~Add rotation while changing directions~~
 [ ] Make a start menu
 [ ] A settings option would seems nice
 [ ] Add physics 
