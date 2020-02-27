@@ -7,6 +7,7 @@ class RocketApp extends React.Component {
     rocket = new Rocket();
     state = {
         rocketStruct: '', 
+        framePos : 0,
     }
 
     componentDidMount(){
@@ -16,6 +17,7 @@ class RocketApp extends React.Component {
     gameLoop(){
         this.setState({
             rocketStruct : this.rocket.getMyStructure(),
+            framePos : this.state.framePos > 100 ? 0 : (this.state.framePos + 0.1)
         })
         window.requestAnimationFrame(()=>{
             this.gameLoop();
@@ -27,7 +29,7 @@ class RocketApp extends React.Component {
         return (
             <div className="full-height">
                 <div className="full-height space-background">
-                    <Star/>
+                    <Star framePos={this.state.framePos} />
                 </div>
                <div>
                {this.state.rocketStruct}

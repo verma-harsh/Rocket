@@ -1,77 +1,77 @@
 /* KeyFrames used for twinkling of stars */
 @-webkit-keyframes twinkle_1 {
-    0%   { opacity: 0.7; }
-    30%  { opacity: 0.7; }
+    0%   { opacity: 0.3; }
+    30%  { opacity: 0.3; }
     70%  { opacity: 0; }
     100% { opacity: 0.7; }
   }
   @-moz-keyframes twinkle_1 {
-    0%   { opacity: 0.7; }
-    30%  { opacity: 0.7; }
+    0%   { opacity: 0.3; }
+    30%  { opacity: 0.3; }
     70%  { opacity: 0; }
     100% { opacity: 0.7; }
   }
   @-o-keyframes twinkle_1 {
-    0%   { opacity: 0.7; }
-    30%  { opacity: 0.7; }
+    0%   { opacity: 0.3; }
+    30%  { opacity: 0.3; }
     70%  { opacity: 0; }
     100% { opacity: 0.7; }
   }
   @keyframes twinkle_1 {
-    0%   { opacity: 0.7; }
-    30%  { opacity: 0.7; }
+    0%   { opacity: 0.3; }
+    30%  { opacity: 0.3; }
     70%  { opacity: 0; }
     100% { opacity: 0.7; }
   }
 
 @-webkit-keyframes twinkle_2 {
-    0%   { opacity: 0.7; }
+    0%   { opacity: 0.8; }
     25%  { opacity: 0; }
     80%  { opacity: 0; }
-    100% { opacity: 0.7; }
+    100% { opacity: 0.3; }
   }
   @-moz-keyframes twinkle_2 {
-    0%   { opacity: 0.7; }
+    0%   { opacity: 0.3; }
     25%  { opacity: 0; }
     80%  { opacity: 0; }
-    100% { opacity: 0.7; }
+    100% { opacity: 0.3; }
   }
   @-o-keyframes twinkle_2 {
-    0%   { opacity: 0.7; }
+    0%   { opacity: 0.3; }
     25%  { opacity: 0; }
     80%  { opacity: 0; }
-    100% { opacity: 0.7; }
+    100% { opacity: 0.3; }
   }
   @keyframes twinkle_2 {
-    0%   { opacity: 0.7; }
+    0%   { opacity: 0.3; }
     25%  { opacity: 0; }
     80%  { opacity: 0; }
-    100% { opacity: 0.7; }
+    100% { opacity: 0.3; }
   }
 
 @-webkit-keyframes twinkle_3 {
-    0%   { opacity: 0.7; }
+    0%   { opacity: 0.3; }
     30%  { opacity: 0; }
     40%  { opacity: 0; }
-    100% { opacity: 0.7; }
+    100% { opacity: 0.3; }
   }
   @-moz-keyframes twinkle_3 {
-    0%   { opacity: 0.7; }
+    0%   { opacity: 0.3; }
     30%  { opacity: 0; }
     40%  { opacity: 0; }
-    100% { opacity: 0.7; }
+    100% { opacity: 0.3; }
   }
   @-o-keyframes twinkle_3 {
-    0%   { opacity: 0.7; }
+    0%   { opacity: 0.3; }
     30%  { opacity: 0; }
     40%  { opacity: 0; }
-    100% { opacity: 0.7; }
+    100% { opacity: 0.3; }
   }
   @keyframes twinkle_3 {
-    0%   { opacity: 0.7; }
+    0%   { opacity: 0.3; }
     30%  { opacity: 0; }
     40%  { opacity: 0; }
-    100% { opacity: 0.7; }
+    100% { opacity: 0.3; }
   }
 
   /* Star types */
