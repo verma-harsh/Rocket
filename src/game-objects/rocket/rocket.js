@@ -51,23 +51,23 @@ export class Rocket {
     switch (key) {
       case "ArrowUp": {
         this.y = this.y - this.speed;
-        this.rotaionPos = this.rotaionPos === -90 ? this.rotaionPos : this.rotaionPos - 2;
+        this.rotaionPos = this.rotaionPos < -89 || this.rotaionPos === -90 ? -90 : this.rotaionPos - 10;
         break;
       }
       case "ArrowDown": {
         this.y = this.y + this.speed;
-        this.rotaionPos = this.rotaionPos === +90 ? this.rotaionPos : this.rotaionPos + 2;
+        this.rotaionPos = this.rotaionPos > 89 || this.rotaionPos === 90 ? 90 : this.rotaionPos + 10;
         break;
       }
       case "ArrowLeft": {
         this.x = this.x - this.speed;
-        this.rotaionPos = this.rotaionPos === -180 ? this.rotaionPos : this.rotaionPos - 10;
+        this.rotaionPos = this.rotaionPos < -179 || this.rotaionPos === -180 ? -180 : this.rotaionPos - 10;
 
         break;
       }
       case "ArrowRight": {
         this.x = this.x + this.speed;
-        this.rotaionPos = this.rotaionPos === 0 ? this.rotaionPos : this.rotaionPos + 10;
+        this.rotaionPos = this.rotaionPos > 1 || this.rotaionPos === 0 ? 0 : this.rotaionPos + 10;
 
         break;
       }
