@@ -3,7 +3,7 @@ import rocket from "../../assets/rocket.png";
 import "../rocket/rocket.css";
 const SPEED = 2;
 const ACCELERATION = 1;
-export class Rocket {
+export class Rocket extends React.Component {
   x;
   y;
   rotaionPos = 0;
@@ -11,6 +11,7 @@ export class Rocket {
   prevKey;
 
   constructor() {
+    super()
     this.x = window.innerWidth / 2;
     this.y = window.innerHeight / 2;
     this.captureKeyPress();
@@ -93,7 +94,7 @@ export class Rocket {
     }
   }
 
-  getMyStructure() {
+  render() {
     return (
       <div
         style={{
@@ -102,7 +103,8 @@ export class Rocket {
           left: this.x,
           transform: `rotate(${this.rotaionPos}deg)`
         }}
-      >
+      > 
+        {/* <BulletContainer/> */}
         <img className="rocket-size" src={rocket} alt="rocket" />
       </div>
     );

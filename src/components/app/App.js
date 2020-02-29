@@ -7,7 +7,6 @@ import "../app/app.css";
 class RocketApp extends React.Component {
     rocket = new Rocket();
     state = {
-        rocketStruct: '', 
         framePos : 0,
         score: 0
     }
@@ -18,7 +17,6 @@ class RocketApp extends React.Component {
 
     gameLoop(){
         this.setState({
-            rocketStruct : this.rocket.getMyStructure(),
             framePos : this.state.framePos > 100 ? 0 : (this.state.framePos + 0.1),
             score : (this.state.score + 0.01)
         })
@@ -28,7 +26,6 @@ class RocketApp extends React.Component {
     }   
     
     render(){
-
         return (
             <div className="full-height">
                 <Score score={parseInt(this.state.score)}/>
@@ -36,7 +33,7 @@ class RocketApp extends React.Component {
                     <Star framePos={this.state.framePos} />
                 </div>
                <div>
-               {this.state.rocketStruct}
+                <Rocket framePos={this.state.framePos}/>
                </div>
              </div>
         )
