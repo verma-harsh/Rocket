@@ -11,17 +11,19 @@ export class Rocket extends React.Component {
   prevKey;
 
   constructor() {
-    super()
+    super();
     this.x = window.innerWidth / 2;
     this.y = window.innerHeight / 2;
     this.captureKeyPress();
+    // Caution : Attaching to global event; // TODO ?
+    onmousemove = (e) => this._mouseMoveFollow(e);
   }
 
   captureKeyPress() {
-    document.addEventListener("keydown", ev => {
+    document.addEventListener("keydown", (ev) => {
       this.governMovement(ev);
     });
-    document.addEventListener("keyup", ev => {
+    document.addEventListener("keyup", (ev) => {
       let t = 1;
       this.speed = SPEED + 10;
       const deaccelerator = setInterval(() => {
@@ -48,35 +50,15 @@ export class Rocket extends React.Component {
     this._moveRocket(key);
   }
 
+  _mouseMoveFollow(mouseEve) {
+    const { clientX, clientY } = mouseEve;
+    const diffX = this.x - clientX;
+    const diffY = this.y - clientY;
+
+    this.rotaionPos = Math.atan2(diffY, diffX) * (180 / Math.PI) - 180;
+  }
+
   _moveRocket(key) {
-    switch (key) {
-      case "ArrowUp": {
-        this.y = this.y - this.speed;
-        this.rotaionPos = this.rotaionPos < -89 || this.rotaionPos === -90 ? -90 : this.rotaionPos - 10;
-        break;
-      }
-      case "ArrowDown": {
-        this.y = this.y + this.speed;
-        this.rotaionPos = this.rotaionPos > 89 || this.rotaionPos === 90 ? 90 : this.rotaionPos + 10;
-        break;
-      }
-      case "ArrowLeft": {
-        this.x = this.x - this.speed;
-        this.rotaionPos = this.rotaionPos < -179 || this.rotaionPos === -180 ? -180 : this.rotaionPos - 10;
-
-        break;
-      }
-      case "ArrowRight": {
-        this.x = this.x + this.speed;
-        this.rotaionPos = this.rotaionPos > 1 || this.rotaionPos === 0 ? 0 : this.rotaionPos + 10;
-
-        break;
-      }
-      default: {
-        console.log("Dont move the rocket!");
-      }
-    }
-
     if (this.x < 0) {
       this.x = document.body.clientWidth;
     }
@@ -96,16 +78,18 @@ export class Rocket extends React.Component {
 
   render() {
     return (
-      <div
-        style={{
-          position: "absolute",
-          top: this.y,
-          left: this.x,
-          transform: `rotate(${this.rotaionPos}deg)`
-        }}
-      > 
-        {/* <BulletContainer/> */}
-        <img className="rocket-size" src={rocket} alt="rocket" />
+      <div>
+        <div
+          style={{
+            position: "absolute",
+            top: this.y,
+            left: this.x,
+            transform: `rotate(${this.rotaionPos}deg)`,
+          }}
+        >
+          {/* <BulletContainer/> */}
+          <img className="rocket-size" src={rocket} alt="rocket" />
+        </div>
       </div>
     );
   }
