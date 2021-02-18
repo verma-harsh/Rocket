@@ -59,6 +59,27 @@ export class Rocket extends React.Component {
   }
 
   _moveRocket(key) {
+    switch (key) {
+      case "ArrowUp": {
+        this.y = this.y - this.speed;
+        break;
+      }
+      case "ArrowDown": {
+        this.y = this.y + this.speed;
+        break;
+      }
+      case "ArrowLeft": {
+        this.x = this.x - this.speed;
+        break;
+      }
+      case "ArrowRight": {
+        this.x = this.x + this.speed;
+        break;
+      }
+      default: {
+        console.log("Dont move the rocket!");
+      }
+    }
     if (this.x < 0) {
       this.x = document.body.clientWidth;
     }
